@@ -1,10 +1,10 @@
 # spring-security-gethttp-invocation
 
+```
+
 15:39:15.691 WARN  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext  - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springSecurityFilterChain' defined in class path resource [org/springframework/security/config/annotation/web/configuration/WebSecurityConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.servlet.Filter]: Factory method 'springSecurityFilterChain' threw exception; nested exception is java.lang.NullPointerException
 15:39:15.694 INFO  o.a.catalina.core.StandardService  - Stopping service Tomcat
 15:39:15.719 INFO  o.s.b.a.l.AutoConfigurationReportLoggingInitializer  - 
-
-The exception is below.
 
 Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
 15:39:15.728 ERROR o.s.boot.SpringApplication org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springSecurityFilterChain' defined in class path resource [org/springframework/security/config/annotation/web/configuration/WebSecurityConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.servlet.Filter]: Factory method 'springSecurityFilterChain' threw exception; nested exception is java.lang.NullPointerException
@@ -60,3 +60,5 @@ Caused by: java.lang.NullPointerException: null
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
 	... 20 common frames omitted
  - Application startup failed
+
+```

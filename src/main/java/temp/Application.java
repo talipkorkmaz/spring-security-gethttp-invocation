@@ -6,6 +6,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.oauth2.client.OAuth2ClientContext;
@@ -15,6 +16,7 @@ import org.springframework.security.web.header.HeaderWriterFilter;
 import org.springframework.web.filter.RequestContextFilter;
 
 @SpringBootApplication
+@EnableAspectJAutoProxy (proxyTargetClass = true)
 public class Application {
 
 	public static void main(String[] args) {
