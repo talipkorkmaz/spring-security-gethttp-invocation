@@ -1,0 +1,31 @@
+endpoints:
+  restart:
+    enabled: false
+  shutdown:
+    enabled: false
+  health:
+    sensitive: true
+
+server:
+  port: 8085
+  context-path: /spring-security-gethttp-invocation
+
+authserver:
+    hostname: localhost
+    port: 7001
+    context-path: aydes
+
+security:
+  oauth2:
+    sso:
+      home:
+        secure: false
+        path: /,/**/*.html
+    client:
+      accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.context-path}/oauth/token
+      userAuthorizationUri: http://${authserver.hostname}:${authserver.port}/${authserver.context-path}/oauth/authorize
+      clientId: basarsoft
+      clientSecret: $2a$11$ewXXcRsyLY9uvlCXOx5oj.wuAtad14rRZrEwLoBpyc7nycAeQI1nu
+      clientAuthenticationScheme: query
+    resource:
+      userInfoUri: http://${authserver.hostname}:${authserver.port}/${authserver.context-path}/userresource/aydesuser
